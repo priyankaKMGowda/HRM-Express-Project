@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #eee;
+  font-family: "Poppins", sans-serif;
+}
+
+#emp_gender {
+  margin: 10px;
+}
+#emp_skills {
+  margin: 5px;
+}
+
+.employeeBlock form .col-4 label {
+  font-weight: 600;
+  text-transform: capitalize;
+  font-style: italic;
+  color: rgb(66, 64, 64);
+}
+
+.editIcon {
+  position: relative;
+}
+
+.editIcon img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -127px;
+  top: 0px;
+  z-index: 111;
+}
+
+.editIcon img:hover {
+  filter: grayscale();
+}
+
+/* snack bar messages */
+
+.alert {
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  margin: 5px 0px;
+  transform: translate(1000px);
+  transition: ease all 0.4s;
+  z-index: 1111;
+}
+
+.alert-success {
+  background: #a6f5a6f2;
+  padding: 10px;
+  color: rgb(4, 87, 11);
+  border-bottom: 3px solid green;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 1px green;
+  border-radius: 3px 3px 3px 3px;
+  width:325px;
+  text-align: center;
+}
+
+
+.alert-danger{
+   background: #f8b6b6f2;
+  padding: 10px;
+  color: rgb(235, 16, 16);
+  border-bottom: 3px solid red;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 1px crimson;
+  border-radius: 3px 3px 3px 3px;
+  width:325px;
+  text-align: center;
+}
+
+
+
+
+

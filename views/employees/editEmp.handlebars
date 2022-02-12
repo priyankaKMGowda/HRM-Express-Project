@@ -1,0 +1,209 @@
+<section class="container bg-white mt-4">
+  <article>
+    <main class="employeeBlock">
+      <h2 class="h2 text-uppercase py-3 font-weight-bold text-primary">Update
+        Employee</h2>
+
+      {{! Here action will be for edit Employee  with ID 
+take the payload of Edit and select the _ID from database and edit the data
+
+Remember: While using put method  need to use th method-override
+Here two things:
+    1. adding the dynamic parameter
+    2. calling the input with type as hidden
+}}
+      <form
+        action="/employee/edit-emp/{{editPayload._id}}?_method=PUT"
+        method="post"
+        enctype="multipart/form-data"
+      >
+
+        {{! for method override }}
+        <input type="hidden" name="_method" value="PUT" />
+
+        {{! Never forget to call value attribute }}
+        <div class="row">
+          <div class="col-4 form-group">
+            <label for="emp_name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="emp_name"
+              id="emp_name"
+              placeholder="Enter your name"
+              value="{{editPayload.emp_name}}"
+            />
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_id"> Emp ID</label><input
+              type="text"
+              class="form-control"
+              name="emp_id"
+              id="emp_id"
+              placeholder="Enter your ID"
+              value="{{editPayload.emp_id}}"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <label for="emp_salary">Salary</label>
+            <input
+              type="text"
+              class="form-control"
+              name="emp_salary"
+              id="emp_salary"
+              placeholder="Enter your salary"
+              value="{{editPayload.emp_salary}}"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <label for="emp_education">Education Details</label>
+            <select
+              id="emp_education"
+              name="emp_education"
+              class="form-control"
+              required
+            >
+              <option value="">Choose Option</option>
+              <option value="be">BE</option>
+              <option value="btech">BTECH</option>
+              <option value="bca">BCA</option>
+              <option value="mca">MCA</option>
+              <option value="msc">MSC</option>
+            </select>
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_experience">Experience</label>
+            <input
+              type="text"
+              min="0"
+              class="form-control"
+              name="emp_experience"
+              id="emp_experience"
+              value="{{editPayload.emp_experience}}"
+            />
+          </div>
+
+          <div class="col-4 form-group mt-2">
+            <label for="emp_gender">Gender</label>
+            <br />
+            <input
+              type="radio"
+              name="emp_gender"
+              id="emp_gender"
+              value="{{editPayload.emp_gender}}"
+            />Male
+            <input
+              type="radio"
+              name="emp_gender"
+              id="emp_gender"
+              value="{{editPayload.emp_gender}}"
+            />Female
+
+            <input
+              type="radio"
+              name="emp_gender"
+              id="emp_gender"
+              value="{{editPayload.emp_gender}}"
+            />Others
+
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_location">Location</label>
+            <input
+              type="text"
+              class="form-control"
+              name="emp_location"
+              id="emp_location"
+              value="{{editPayload.emp_location}}"
+            />
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_phone">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              name="emp_phone"
+              id="emp_phone"
+              value="{{editPayload.emp_phone}}"
+            />
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_email">Email ID</label>
+            <input
+              type="email"
+              class="form-control"
+              name="emp_email"
+              id="emp_email"
+              value="{{editPayload.emp_email}}"
+            />
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_desgination">Designation</label>
+            <input
+              type="text"
+              class="form-control"
+              name="emp_designation"
+              id="emp_designation"
+              value="{{editPayload.emp_designation}}"
+            />
+          </div>
+
+          <div class="col-4 form-group">
+            <label for="emp_photo">Employee Photo</label>
+            <input
+              type="file"
+              class="form-control"
+              name="emp_photo"
+              id="emp_photo"
+            />
+          </div>
+
+          <div class="col-4 form-group mt-2">
+            <label for="emp_skills">Skills</label>
+            <br />
+            <input
+              type="checkbox"
+              value="Java"
+              name="emp_skills"
+              id="emp_skills"
+              class="pr-2"
+            />Java
+
+            <input
+              type="checkbox"
+              value="JavaScript"
+              name="emp_skills"
+              id="emp_skills"
+            />JavaScript
+
+            <input
+              type="checkbox"
+              value="Python"
+              name="emp_skills"
+              id="emp_skills"
+            />Python
+
+            <input
+              type="checkbox"
+              value="React"
+              name="emp_skills"
+              id="emp_skills"
+            />React
+
+          </div>
+
+          <div class="col-3 form-group mt-2 ml-4">
+            <button class="btn btn-block btn-lg btn-primary">Submit</button>
+          </div>
+
+        </div>
+      </form>
+    </main>
+  </article>
+</section>

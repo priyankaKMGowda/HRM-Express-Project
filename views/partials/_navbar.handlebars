@@ -1,0 +1,63 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light"
+  style="border-bottom: 4px solid rgb(58, 58, 251);"
+>
+
+  {{! creating a container }}
+  <div class="container">
+    <a
+      class="navbar-brand"
+      href="#"
+      style="font-weight:900;letter-spacing:1.2rem;font-size:25px"
+    >HRM</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/employee/home">Home</a>
+        </li>
+
+        {{!======================Adding the Conditional Rendering to the user based on the authorization ================================ }}
+        {{#if user}}
+
+          <li class="nav-item">
+            <a class="nav-link" href="/employee/create-emp">Create Employee</a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link text-success font-weight-bold border-bottom text-uppercase"
+            >{{username}}</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-danger btn-sm text-white mx-2 text-uppercase font-weight-bold"
+              href="/auth/logout"
+            >logout</a>
+          </li>
+
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/register">Register</a>
+          </li>
+
+        {{/if}}
+
+        {{!======================Adding the Conditional Rendering to the user based on the authorization ================================ }}
+      </ul>
+    </div>
+  </div>
+</nav>

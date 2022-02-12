@@ -1,0 +1,45 @@
+<section id="authBlock">
+  <article class="col-md-4 mx-auto bg-white card my-2">
+    <div class="card-body">
+      <h2
+        class="h2 font-weight-bold text-secondary text-center text-uppercase py-2"
+      >Login</h2>
+      <form action="/auth/login" method="post">
+
+        <div class="form-group font-weight-bold">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="enter email"
+          />
+        </div>
+
+        <div class="form-group font-weight-bold">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="enter password"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+
+          <button
+            type="Submit"
+            class="btn btn-primary btn-block my-2"
+          >Login</button>
+
+          <a href="/auth/register" class="text-center">Register Here</a>
+        </div>
+
+      </form>
+    </div>
+  </article>
+</section>

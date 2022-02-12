@@ -1,0 +1,104 @@
+{{! First Design using table }}
+
+{{!-- <section class="container-fluid my-4">
+  <article>
+    <table
+      class="table table-bordered table-hover text-uppercase table-responsive"
+    >
+      <thead class="table-dark">
+        <tr>
+          <th>photo</th>
+          <th>id</th>
+          <th>name</th>
+          <th>salary</th>
+          <th>des</th>
+          <th>exp</th>
+          <th>edu</th>
+          <th>email</th>
+          <th>skills</th>
+          <th>phone</th>
+          <th>gender</th>
+          <th>location</th>
+          <th>View Profile</th>
+          <th>Edit Profile</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white">
+        {{#each payload}}
+          <tr>
+            <td><img
+                class="img-thumbnail"
+                src="{{trimFirst6Char emp_photo.0.path}}"
+                alt="{{emp_name}}"
+              /></td>
+
+            <td>{{emp_id}}</td>
+            <td>{{emp_name}}</td>
+            <td>{{emp_salary}}</td>
+            <td>{{emp_designation}}</td>
+            <td>{{emp_experience}}</td>
+            <td>{{emp_education}}</td>
+            <td>{{emp_email}}</td>
+            <td>{{emp_skills}}</td>
+            <td>{{emp_phone}}</td>
+            <td>{{emp_gender}}</td>
+            <td>{{emp_location}}</td>
+            <td>
+              <a
+                href="/employee/{{_id}}"
+                class="btn btn-block btn-sm btn-primary"
+              >
+                View profile
+              </a></td>
+
+            <td>
+              <a
+                href="/employee/edit-emp/{{_id}}"
+                class="btn btn-block btn-sm btn-warning"
+              >
+                Edit profile
+              </a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </article>
+</section> --}}
+
+{{! ================================================================= }}
+
+{{! Second Design using Grid }}
+
+<section class="container my-2">
+  <article>
+
+    <div class="card-columns">
+      {{#each payload}}
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="{{trimFirst6Char emp_photo.0.path}}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-capitalize">{{emp_name}}</h5>
+            <p class="card-text">{{emp_email}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                ago</small></p>
+
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+  </article>
+</section>
+
+{{! ============================================================= }}
+{{! before authentication & Authorization, we  were able to see the view profile options from the in home, Now we have removed }}
+{{!-- <p>
+              <a
+                href="/employee/{{_id}}"
+                class="btn btn-secondary btn-block"
+              >View Profile</a>
+            </p> --}}
